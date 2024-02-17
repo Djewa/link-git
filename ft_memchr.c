@@ -1,6 +1,6 @@
-#include "libft.h"
+#include <stdio.h>
 
-size_t ft_strlen(const char *str)
+size_t ft_strlen(const char *str) // size_t ft_strlen(const char *str)
 {
     int i;
 
@@ -40,4 +40,20 @@ void *ft_memchr(const void *s, int c, size_t n)
     }
     
      return (NULL);
+}
+
+//#include <string.h>
+
+int main () 
+{
+   const char str[] = "Hello World";
+   const char ch = 'W';
+   char *ret;
+
+   ret = ft_memchr(str, ch, ft_strlen(str));
+   // ret = ft_memchr(str, ch, 10);
+
+   printf("String after |%c| is - |%s|\n", ch, ret);
+
+   return(0);
 }

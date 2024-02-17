@@ -1,4 +1,4 @@
-#include "libft.h"
+#include <stdio.h>
 
 int ft_strlen(char *str)
 {
@@ -10,7 +10,7 @@ int ft_strlen(char *str)
     return (i);
 }
 
-char *ft_strrchr(const char *s, int c)
+char *ft_strrchr(char *s, int c)
 {
     int i;
     
@@ -35,4 +35,27 @@ char *ft_strrchr(const char *s, int c)
         return(char *)(&s[i]);
     }
     return (NULL); 
+}
+
+#include <string.h>
+int main()
+{
+   int len;
+   const char str[] = "Hello World";
+   const char c = 'a';
+   char* ret = strrchr(str, c);
+   
+    if(ret != NULL)
+    {
+        printf("Looking for %c\n", *ret);
+        printf("Found at position %d\n", ret - str);
+        printf("String after |%c| is - |%s|\n", c, ret);
+    }
+    else
+     {
+        printf("Not found");
+     }
+   
+   return(0);
+
 }

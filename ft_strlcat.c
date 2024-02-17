@@ -1,4 +1,4 @@
-#include "libft.h"
+#include <stdio.h>
 
 size_t ft_strlen(char *str)
 {
@@ -10,7 +10,7 @@ size_t ft_strlen(char *str)
     return (i);
 }
 
-size_t ft_strlcat(char *dest, const char *src, size_t destsize) 
+size_t ft_strlcat(char *dest, const char *src, size_t destsize) //size_t ft_strlcat(char *dest, const char *src, size_t destsize)
 {
     unsigned int i;
     unsigned int j;
@@ -32,4 +32,16 @@ size_t ft_strlcat(char *dest, const char *src, size_t destsize)
     }
     dest[i + j] = '\0';
     return (i+j);
+}
+
+int main()
+{
+    char dest[100] = "My Name is Miin";
+    char src[] = " Nice to meet You";
+
+    printf("dest = %s\n", dest);
+    printf("src = %s\n", src);
+    unsigned int result = ft_strlcat(dest, src, 33);
+    printf("New dest = %s\n", dest);
+    printf("Value = %d", result);
 }

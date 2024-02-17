@@ -1,4 +1,4 @@
-#include "libft.h"
+#include <stdio.h>
 
 void *ft_memmove(void *s1, const void *s2, size_t len)
 {
@@ -15,6 +15,10 @@ void *ft_memmove(void *s1, const void *s2, size_t len)
     {
         return(NULL);
     }
+  /* checking if the address of the destination is greater than the
+     * address of the source, if that's the case we'll copy from end to
+     * start
+     */ 
 
     if(dest > src)
     {
@@ -24,6 +28,9 @@ void *ft_memmove(void *s1, const void *s2, size_t len)
             len--;
         }
     }
+    /* if the address of the destination is not greater than the address
+     * of the source, we'll copy from start to end, like we're used to
+     */
     else
     {
         while(i < len)
@@ -33,4 +40,19 @@ void *ft_memmove(void *s1, const void *s2, size_t len)
         }
     }
     return(dest);
+}
+
+#include <string.h> 
+int main()
+{
+    char str1[] = "Hello World";
+    char str2[20];
+
+    ft_memmove(str2, str1, strlen(str1) + 1);
+
+    printf("str1: %s\n", str1);
+    printf("str2: %s\n", str2);
+
+    return(0);
+
 }

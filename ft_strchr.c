@@ -1,4 +1,4 @@
-#include "libft.h"
+#include <stdio.h>
 
 char *ft_strchr(const char *s, int c)
 {
@@ -23,4 +23,24 @@ char *ft_strchr(const char *s, int c)
         return(char *)(&s[i]);
     }
     return (NULL);
+}
+
+int main()
+{
+    char str[] = "Hello Wolrd";
+    char c = 'a';
+    char* p = ft_strchr(str, c);
+     
+     if(p != NULL)
+     {
+        printf("Looking for %c\n", *p);
+        printf("Found at position %d\n", p - str);
+        printf("String after |%c| is - |%s|\n", c, p);
+     }
+     else
+     {
+        printf("Not found");
+     }
+
+    return 0;
 }

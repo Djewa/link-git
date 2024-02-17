@@ -1,4 +1,5 @@
-#include "libft.h"
+#include <stdio.h>
+
 int ft_isascii(int c)
 {
 
@@ -7,4 +8,15 @@ int ft_isascii(int c)
         return (0);
     }
     return (1);
+}
+
+int main()
+{
+    int ascii, ascii2;
+    int a = 120;
+    int b = 128;
+    ascii = ft_isascii(a);
+    ascii2 = ft_isascii(b);
+    printf("%d\n", ascii);
+    printf("%d\n", ascii2);
 }
