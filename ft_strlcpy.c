@@ -1,6 +1,6 @@
-#include <stdio.h>
+#include "libft.h"
 
-size_t ft_strlcpy(char *dest, const char *src, size_t destsize) //size_t ft_strlcpy(char *dest, const char *src, size_t destsize)
+size_t ft_strlcpy(char *dest, const char *src, size_t destsize)
 {
     int i;
 
@@ -25,6 +25,7 @@ size_t ft_strlcpy(char *dest, const char *src, size_t destsize) //size_t ft_strl
     return (i);
 }
 
+#include <stdio.h>
 int main()
 {
     char src[100] = "My Name is Miin";

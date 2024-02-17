@@ -1,6 +1,6 @@
-#include <stdio.h>
+#include "libft.h"
 
-size_t ft_strlen(const char *str) // size_t ft_strlen(const char *str)
+size_t ft_strlen(const char *str)
 {
     int i;
 
@@ -43,7 +43,7 @@ void *ft_memchr(const void *s, int c, size_t n)
 }
 
 //#include <string.h>
-
+#include <stdio.h>
 int main () 
 {
    const char str[] = "Hello World";

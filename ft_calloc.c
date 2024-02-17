@@ -1,5 +1,4 @@
-#include <stdio.h>
-#include <stdlib.h>
+#include "libft.h"
 
 void *ft_bzero(void *s, size_t n)
 {
@@ -19,7 +18,7 @@ void *ft_calloc(size_t count, size_t size)
     {
         return(NULL);
     }
-    ptr = (int *)malloc(count * size);
+    ptr = malloc(count * size);
     if(ptr == NULL)
     {
         return (NULL);
@@ -28,6 +27,9 @@ void *ft_calloc(size_t count, size_t size)
     return(ptr);
 }
 
+
+#include <stdio.h>
+#include <stdlib.h>
 int main()
 {
     int *numbers = ft_calloc(5, sizeof(int));
@@ -36,3 +38,4 @@ int main()
 
     int *empty_array = ft_calloc(0, sizeof(int));
 }
+

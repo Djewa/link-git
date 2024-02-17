@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include "libft.h"
 
 int ft_isalpha(int c)
 {
@@ -11,6 +11,7 @@ int ft_isalpha(int c)
 }
 
 
+#include <stdio.h>
 int main()
 {
  int alpha, alpha2, alpha3;

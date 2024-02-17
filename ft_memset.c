@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include "libft.h"
 
 void *ft_memset(void *b, int c, size_t len)
 {
@@ -17,6 +17,7 @@ void *ft_memset(void *b, int c, size_t len)
  return(b);
 }
 
+#include <stdio.h>
 int main()
 {
 char b[10];

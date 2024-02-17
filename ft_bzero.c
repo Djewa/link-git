@@ -1,8 +1,7 @@
-#include <stdio.h>
+#include "libft.h"
 
 void *ft_bzero(void *s, size_t n)
 {
-   // unsigned char c = '\0';
     size_t i;
     i = 0;
     while(i < n)
@@ -12,6 +11,7 @@ void *ft_bzero(void *s, size_t n)
     }
 }
 
+#include <stdio.h>
 int main()
   {
     char c[100] = "abcdefghisdklsdsfg";
