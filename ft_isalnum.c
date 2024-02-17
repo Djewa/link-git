@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include "libft.h"
 
 int ft_isalnum(int c)
 {
@@ -9,6 +9,8 @@ int ft_isalnum(int c)
     return (0);
 }
 
+
+#include <stdio.h>
 int main()
 {
     int alnum, alnum2, alnum3, alnum4;

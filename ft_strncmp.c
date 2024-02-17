@@ -1,6 +1,6 @@
-#include <stdio.h>
+#include "libft.h"
 
-int ft_strncmp(char *s1, char *s2, size_t n) //int ft_strncmp(const char *s1, const char *s2, size_t n)
+int ft_strncmp(const char *s1, const char *s2, size_t n)
 {
     unsigned int i;
 
@@ -20,6 +20,7 @@ int ft_strncmp(char *s1, char *s2, size_t n) //int ft_strncmp(const char *s1, co
     return (s1[i] - s2[i]);
 }
 
+#include <stdio.h>
 int main()
 {
     char s1[] = "abcdef";
@@ -29,4 +30,3 @@ int main()
     printf("%d", ft_strncmp(s1, s2, n));
     return (0);
 }
-

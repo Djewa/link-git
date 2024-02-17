@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include "libft.h"
 
 int ft_atoi(const char *str)
 {
@@ -28,6 +28,8 @@ int ft_atoi(const char *str)
     return(result * neg);
 }
 
+
+#include <stdio.h>
 int main()
 {
     char *a = "  ---+--+123456ab567";
