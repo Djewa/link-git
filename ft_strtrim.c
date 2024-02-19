@@ -2,38 +2,43 @@
 #include <stdlib.h>
 #include <string.h>
 
+size_t  ft_strlen(const char *str)
+{
+    int i;
+
+    i = 0;
+    while (str[i] != '\0')
+    {
+        i++;
+    }
+    return (i);
+}
+
 char *ft_strtrim(char const *s1, char const *set)
 {
-    int i, j;
-    size_t len;
-    char *str;
-    i= 0;
-    len = strlen(s1);
-    if(*s1 == '\0')
-    {
-        return(0);
-    }
-    str = (char *)malloc((len + 1) * sizeof(char));
+    int i;
+    int j;
+    size_t  len;
+    char    *str;
 
-    j = 0;
-    while(s1[i] == set[j])
+    i = 0;
+    len = ft_strlen(s1) - 1;
+    if (*s1 == '\0')
     {
-        i++;
-        j++;
-         return (NULL);
+        return(NULL);
     }
-    while(str[i] != set[j])
+    if (*set == '\0')
     {
-        str[i] = *s1++;
-        i++;
+        return (s1);
     }
-    return(str);
+
+    str = (char *)malloc((len + 1) * sizeof(char));
 }
 
 int main()
 {
-    char a[] = "I am Miin";
-    char b[] = "am";
+    char a[] = "abcdabc";
+    char b[] = "ab";
 
     printf("%s\n",ft_strtrim, a, b);
 }
