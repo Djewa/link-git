@@ -1,43 +1,63 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: djewapat <djewapat@student.42bangkok.com>  +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/02/21 17:21:01 by djewapat          #+#    #+#             */
+/*   Updated: 2024/02/21 17:21:01 by djewapat         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
+#include <stddef.h>
+
 #include "libft.h"
 
-size_t  ft_strlen(const char *str)
+size_t	ft_strlen(const char *str)
 {
-    int i;
+	int	i;
 
-    i = 0;
-    while (str[i] != '\0')
-    {
-        i++;
-    }
-    return (i);
+	i = 0;
+	while (str[i] != '\0')
+	{
+		i++;
+	}
+	return (i);
 }
 
-char    *ft_strdup(const char *s)
+char	*ft_strdup(const char *s)
 {
-    char    *str;
-    size_t  len;
+	char	*str;
+	size_t	len;
+	int		i;
 
-    len = ft_strlen(s);
-    str = (char *)malloc((len + 1) * sizeof(char));
-    if (str[len] == '\0')
-    {
-        return (NULL);
-    }
-    while (len >= 0)
-    {
-        str[len] = s[len];
-        len--;
-    }
-    str[len] = '\0';
-    return (str);
+	len = ft_strlen(s);
+	str = (char *)malloc((len + 1) * sizeof(char));
+	if (str == NULL)
+	{
+		return (NULL);
+	}
+	i = 0;
+	while (len > i)
+	{
+		str[i] = s[i];
+		i++;
+	}
+	str[i] = '\0';
+	return (str);
 }
 
-#include <stdio.h>
 int main()
 {
-    char source[] = "GeeksForGeeks";
-    char* target = ft_strdup(source); 
- 
-    printf("%s", target);
-    return 0;
+	const char	src[100] = "I am Miin";
+	char	*dest;
+	
+	dest = ft_strdup(src); 
+
+	printf("%s", dest);
+	return 0;
 }

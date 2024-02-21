@@ -1,38 +1,72 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: djewapat <djewapat@student.42bangkok.com>  +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/02/21 15:23:32 by djewapat          #+#    #+#             */
+/*   Updated: 2024/02/21 15:23:32 by djewapat         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include <stdio.h>
+#include <string.h>
+
 #include "libft.h"
 
-int ft_strlen(char *str)
+size_t	ft_strlen(const char *str)
 {
-    int i = 0;
-    while(str[i] != '\0')
-    {
-        i++;
-    }
-    return (i);
+	int i;
+
+	i = 0;
+	while (str[i] != '\0')
+	{
+		i++;
+	}
+	return (i);
 }
 
-char *ft_strrchr(const char *s, int c)
+char	*ft_strrchr(const char *s, int c)
 {
-    int i;
-    
-    i = ft_strlen(s);
+	int i;
 
-    if(s[i] == '\0')
-    {
-        return (NULL);
-    }
+	i = ft_strlen(s);
+	if (s[i] == '\0')
+	{
+		return (NULL);
+	}
+	while (i >= 0)
+	{
+		if (s[i] == (char)c)
+		{
+			return ((char *)(s + i));
+		}
+		i--;
+	}
+	if ((char)c == '\0')
+	{
+		return ((char *)(s + i));
+	}
+	return (NULL); 
+}
 
-    while(i >= 0)
-    {
-        if(s[i] == c)
-        {
-            return(char *)(&s[i]);
-        }
-        i--;
-    }
-   
-    if(c == '\0')
-    {
-        return(char *)(&s[i]);
-    }
-    return (NULL); 
+int main()
+{
+	int	len;
+	const char	str[] = "Hello World";
+	const char	c = 'o';
+	char	*ret = strrchr(str, c);
+
+	if (ret != NULL)
+	{
+		printf("Looking for %c\n", *ret);
+		printf("Found at position %d\n", ret - str);
+		printf("String after |%c| is - |%s|\n", c, ret);
+	}
+	else
+	{
+		printf("Not found");
+	}
+	return(0);
 }

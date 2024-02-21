@@ -1,35 +1,70 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: djewapat <djewapat@student.42bangkok.com>  +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/02/21 19:11:57 by djewapat          #+#    #+#             */
+/*   Updated: 2024/02/21 19:11:57 by djewapat         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include <stdio.h>
+#include <string.h>
+
 #include "libft.h"
 
-void *ft_memmove(void *s1, const void *s2, size_t n)
+void	*ft_memmove(void *s1, const void *s2, size_t n)
 {
-    size_t i;
-   
-    i = 0;
-    if(((unsigned char *)s1)[i] == '\0' && ((unsigned char *)s2)[i] == '\0')
-    {
-        return (NULL);
+	unsigned char	*dest;
+	unsigned char	*src;
+	size_t			i;
+
+	dest = (unsigned char *)s1;
+	src = (unsigned char *)s2;
+	i = 0;
+	
+	if(*dest == '\0' && *src == '\0')
+	{
+		return (NULL);
+	}
+	if (dest > src && dest - src < n)
+	{
+		while (n > 0)
+		{
+			dest[n] = src[n];
+			n--;
+		}
     }
-    while(i < n)
-    {
-        ((unsigned char *)s1)[i] = ((unsigned char *)s2)[i];
-        i++;
-    }
+	else
+	{
+		while(i < n)
+		{
+			dest[i] = src[i];
+			i++;
+		}
+	}
 }
 
 #include <stdio.h>
 #include <string.h> 
 int main()
 {
-    char    str[100] = "Learningisfun";
-    char    *str1;
-    char    *str2;
-    str1 = str;
-    str2 = str;
+	char    src[100] = "Learningisfun";
+	char    *dest;
+	char    *d2;
 
-    printf("Original String = %s\n", str);
-    ft_memmove(str1 + 8, str2, 10);
-    printf("str: %s\n", str);
+	dest = src;
+	d2 = src;
 
-    return(0);
+	printf("Original String = %s\n", src);
+
+	ft_memmove(dest, src, strlen(src) + 1);
+	printf("After memmove dest = %s, src = %s\n", dest, src);
+	
+	ft_memmove(dest + 8, d2, 10);
+	printf("str: %s\n", src);
+	return(0);
 
 }
