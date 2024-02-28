@@ -10,21 +10,17 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <string.h>
-
 #include "libft.h"
 
 char	*ft_strnstr(const char *str, const char *find, size_t len)
 {
-	int	i;
-	int	j;
+	size_t	i;
+	size_t	j;
 
 	i = 0;
+	j = 0;
 	if (find[0] == '\0')
-	{
 		return ((char *)(str + i));
-	}
 	while (str[i] != '\0')
 	{
 		j = 0;
@@ -38,7 +34,7 @@ char	*ft_strnstr(const char *str, const char *find, size_t len)
 		}
 		i++;
 	}
-	return (NULL);
+	return (0);
 }
 
 // int main()

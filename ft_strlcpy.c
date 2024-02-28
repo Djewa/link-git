@@ -10,14 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <string.h>
-
 #include "libft.h"
 
 size_t	ft_strlcpy(char *dest, const char *src, size_t destsize)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
 	if (destsize == 0)
@@ -33,11 +30,8 @@ size_t	ft_strlcpy(char *dest, const char *src, size_t destsize)
 		dest[i] = src[i];
 		i++;
 	}
-	if (i < destsize)
-	{
-		dest[i] = '\0';
-	}
-	return (i);
+	dest[i] = '\0';
+	return (i + 1);
 }
 
 // int main()
@@ -45,6 +39,7 @@ size_t	ft_strlcpy(char *dest, const char *src, size_t destsize)
 // 	char	src[100] = "My Name is Miin";
 // 	char	dest[100] = "I am Miin";
 // 	int	result;
+
 // 	printf("src = %s\n", src);
 // 	printf("dest = %s\n", dest);
 // 	result = ft_strlcpy(dest, src, 16);

@@ -10,30 +10,13 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <stdio.h>
-#include <string.h>
-#include <stddef.h>
-
 #include "libft.h"
-
-size_t	ft_strlen(const char *str)
-{
-	int	i;
-
-	i = 0;
-	while (str[i] != '\0')
-	{
-		i++;
-	}
-	return (i);
-}
 
 char	*ft_strdup(const char *s)
 {
 	char	*str;
 	size_t	len;
-	int		i;
+	size_t	i;
 
 	len = ft_strlen(s);
 	str = (char *)malloc((len + 1) * sizeof(char));
@@ -55,7 +38,7 @@ char	*ft_strdup(const char *s)
 // {
 // 	const char	src[100] = "I am Miin";
 // 	char	*dest;
-// 	dest = ft_strdup(src); 
+// 	dest = ft_strdup(src);
 // 	printf("%s", dest);
 // 	return 0;
 // }

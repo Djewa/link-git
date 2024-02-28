@@ -10,33 +10,17 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <stdio.h>
-#include <string.h>
-#include <stddef.h>
-
 #include "libft.h"
-
-size_t	ft_strlen(const char *str)
-{
-	int	i;
-
-	i = 0;
-	while (str[i] != '\0')
-	{
-		i++;
-	}
-	return (i);
-}
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
 	size_t	len;
 	char	*str;
 	int		i;
+	int		j;
 
 	i = 0;
-	if (*s1 == '\0' || *s2 == '\0')
+	if (s1 == NULL && s2 == NULL)
 		return (NULL);
 	len = ft_strlen(s1) + ft_strlen(s2);
 	str = (char *)malloc((len + 1) * sizeof(char));
@@ -47,12 +31,13 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		str[i] = *s1++;
 		i++;
 	}
+	j = i;
 	while (*s2 != '\0')
 	{
-		str[i] = *s2++;
-		i++;
+		str[j] = *s2++;
+		j++;
 	}
-	str[i] = '\0';
+	str[j] = '\0';
 	return (str);
 }
 

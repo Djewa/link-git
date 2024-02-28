@@ -10,34 +10,17 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <string.h>
-#include <stddef.h>
-
 #include "libft.h"
-
-size_t	ft_strlen(const char *str)
-{
-	int	i;
-
-	i = 0;
-	while (str[i] != '\0')
-	{
-		i++;
-	}
-	return (i);
-}
 
 size_t	ft_strlcat(char *dest, const char *src, size_t destsize)
 {
 	unsigned int	i;
 	unsigned int	j;
-	int				dest_len;
-	int				result;
+	size_t			dest_len;
 
 	i = 0;
 	j = 0;
-	dest_len = ft_strlen(dest);
+	dest_len = ft_strlen(dest) + 1;
 	while (dest[i] != '\0')
 	{
 		i++;
@@ -48,13 +31,14 @@ size_t	ft_strlcat(char *dest, const char *src, size_t destsize)
 		j++;
 	}
 	dest[i + j] = '\0';
-	return (i + j);
+	return (i + j + 1);
 }
 
 // int main()
 // {
 // 	char	dest[100] = "My Name is Miin";
 // 	char	src[] = " Nice to meet You";
+
 // 	printf("dest = %s\n", dest);
 // 	printf("src = %s\n", src);
 // 	unsigned int	result = ft_strlcat(dest, src, 33);

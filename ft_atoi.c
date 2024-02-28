@@ -10,11 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <stdio.h>
-#include <string.h>
-#include <stddef.h>
-
 #include "libft.h"
 
 int	ft_atoi(const char *str)
@@ -25,23 +20,23 @@ int	ft_atoi(const char *str)
 	result = 0;
 	neg = 1;
 	while (*str == 32 || (*str >= 9 && *str <= 13))
-	{
 		str++;
-	}
-	while (*str == 45 || *str == 43)
+	if (*str == 45 || *str == 43)
 	{
 		if (*str == 45)
-		{
 			neg = neg * -1;
-		}
 		str++;
 	}
 	while (*str >= 48 && *str <= 57)
 	{
-		result = result * 10 + *str - '0';
+		result = result * 10 + neg * (*str - '0');
+		if (neg < 0)
+			return (0);
+		if (neg > 0)
+			return (-1);
 		str++;
 	}
-	return (result * neg);
+	return (result);
 }
 
 // int main()

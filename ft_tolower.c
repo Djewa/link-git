@@ -10,8 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-
 #include "libft.h"
 
 int	ft_tolower(int c)
@@ -27,6 +25,7 @@ int	ft_tolower(int c)
 // {
 // 	int	low, low1, low2;
 // 	int	a, b, c;
+
 // 	a = 'A';
 // 	b = 'a';
 // 	c = '1';

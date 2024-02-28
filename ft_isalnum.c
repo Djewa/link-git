@@ -10,10 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <string.h>
-#include <stddef.h>
-
 #include "libft.h"
 
 int	ft_isalnum(int c)
@@ -22,14 +18,11 @@ int	ft_isalnum(int c)
 	{
 		return (1);
 	}
-	else if (c >= '0' && c <= '9')
+	if (c >= '0' && c <= '9')
 	{
 		return (1);
 	}
-	else
-	{
-		return (0);
-	}
+	return (0);
 }
 
 // int main()

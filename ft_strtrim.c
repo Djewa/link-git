@@ -10,60 +10,30 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-
 #include "libft.h"
-
-size_t	ft_strlen(const char *str)
-{
-	int	i;
-
-	i = 0;
-	while (str[i] != '\0')
-	{
-		i++;
-	}
-	return (i);
-}
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	int		start;
 	int		end;
-	int		i;
-	size_t	len;
 	char	*str;
 
-	i = 0;
-	len = ft_strlen(s1) - 1;
-	if (*s1 == '\0')
+	if (!s1 || !set)
 		return (NULL);
-	if (*set == '\0')
-		return (s1);
-	end = len;
-	while (s1[start++] == *set)
-	{
-		return (start);
-	}
-	while (s1[end++] == *set)
-	{
-		return (end);
-	}
-	str = (char *)malloc((end - start + 1) * sizeof(char));
-	while (start < end)
-	{
-		str[i] = s1[start + i];
-		i++;
-	}
-	str[i] = '\0';
-	return (str);
+	str = (char *) s1;
+	while (*str && ft_strchr(set, *str))
+		str++;
+	end = ft_strlen(str);
+	while (end && ft_strchr(set, *(str + end - 1)))
+		end--;
+	return (ft_substr(str, 0, end));
 }
 
-// int main()
+// #include <stdio.h>
+
+// int	main(void)s
 // {
-// 	char	a[] = "abcdaba";
-// 	char	b[] = "ab";
-// 	printf("%s\n",ft_strtrim, a, b);
+// 	char	str[100] = "*|peerapol**m///''jsdin|**|";
+// 	char	set[20] = "*|";
+// 	printf("%s\n", ft_strtrim(str, set));
+// 	return (0);
 // }

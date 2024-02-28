@@ -10,9 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <string.h>
-
 #include "libft.h"
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
@@ -40,6 +37,7 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 // 	char	s1[] = "abcdef";
 // 	char	s2[] = "abcdd";
 // 	unsigned int	n = 5;
+
 // 	printf("%d", ft_strncmp(s1, s2, n));
 // 	return (0);
 // }
