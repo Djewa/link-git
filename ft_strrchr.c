@@ -17,7 +17,7 @@
 
 size_t	ft_strlen(const char *str)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (str[i] != '\0')
@@ -29,7 +29,7 @@ size_t	ft_strlen(const char *str)
 
 char	*ft_strrchr(const char *s, int c)
 {
-	int i;
+	int	i;
 
 	i = ft_strlen(s);
 	if (s[i] == '\0')
@@ -48,25 +48,24 @@ char	*ft_strrchr(const char *s, int c)
 	{
 		return ((char *)(s + i));
 	}
-	return (NULL); 
+	return (NULL);
 }
 
-int main()
-{
-	int	len;
-	const char	str[] = "Hello World";
-	const char	c = 'o';
-	char	*ret = strrchr(str, c);
-
-	if (ret != NULL)
-	{
-		printf("Looking for %c\n", *ret);
-		printf("Found at position %d\n", ret - str);
-		printf("String after |%c| is - |%s|\n", c, ret);
-	}
-	else
-	{
-		printf("Not found");
-	}
-	return(0);
-}
+// int main()
+// {
+// 	int	len;
+// 	const char	str[] = "Hello World";
+// 	const char	c = 'o';
+// 	char	*ret = strrchr(str, c);
+// 	if (ret != NULL)
+// 	{
+// 		printf("Looking for %c\n", *ret);
+// 		printf("Found at position %d\n", ret - str);
+// 		printf("String after |%c| is - |%s|\n", c, ret);
+// 	}
+// 	else
+// 	{
+// 		printf("Not found");
+// 	}
+// 	return(0);
+// }

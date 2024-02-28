@@ -28,7 +28,7 @@ size_t	ft_strlen(const char *str)
 	return (i);
 }
 
-size_t	ft_strlcat(char *dest, const char *src, size_t destsize) 
+size_t	ft_strlcat(char *dest, const char *src, size_t destsize)
 {
 	unsigned int	i;
 	unsigned int	j;
@@ -48,17 +48,16 @@ size_t	ft_strlcat(char *dest, const char *src, size_t destsize)
 		j++;
 	}
 	dest[i + j] = '\0';
-	return (i+j);
+	return (i + j);
 }
 
-int main()
-{
-	char	dest[100] = "My Name is Miin";
-	char	src[] = " Nice to meet You";
-
-	printf("dest = %s\n", dest);
-	printf("src = %s\n", src);
-	unsigned int	result = ft_strlcat(dest, src, 33);
-	printf("New dest = %s\n", dest);
-	printf("Value = %d", result);
-}
+// int main()
+// {
+// 	char	dest[100] = "My Name is Miin";
+// 	char	src[] = " Nice to meet You";
+// 	printf("dest = %s\n", dest);
+// 	printf("src = %s\n", src);
+// 	unsigned int	result = ft_strlcat(dest, src, 33);
+// 	printf("New dest = %s\n", dest);
+// 	printf("Value = %d", result);
+// }

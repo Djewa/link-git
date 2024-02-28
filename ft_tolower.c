@@ -16,25 +16,24 @@
 
 int	ft_tolower(int c)
 {
-	if(c >= 'A' && c <= 'Z')
+	if (c >= 'A' && c <= 'Z')
 	{
 		c = c + 32;
 	}
 	return (c);
 }
 
-int	main()
-{
-	int	low, low1, low2;
-	int	a, b, c;
-
-	a = 'A';
-	b = 'a';
-	c = '1';
-	low = ft_tolower(a);
-	low1 = ft_tolower(b);
-	low2 = ft_tolower(c);
-	printf("%c\n", low);
-	printf("%c\n", low1);
-	printf("%c\n", low2);
-}
+// int	main()
+// {
+// 	int	low, low1, low2;
+// 	int	a, b, c;
+// 	a = 'A';
+// 	b = 'a';
+// 	c = '1';
+// 	low = ft_tolower(a);
+// 	low1 = ft_tolower(b);
+// 	low2 = ft_tolower(c);
+// 	printf("%c\n", low);
+// 	printf("%c\n", low1);
+// 	printf("%c\n", low2);
+// }

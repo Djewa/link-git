@@ -27,11 +27,10 @@ size_t	ft_strlen(const char *str)
 	return (i);
 }
 
-int main()
-{
-	int	len;
-	char	a[] = "Miin Djewapat";
-
-	len = ft_strlen(a);
-	printf("%d\n", len);
-}
+// int main()
+// {
+// 	int	len;
+// 	char	a[] = "Miin Djewapat";
+// 	len = ft_strlen(a);
+// 	printf("%d\n", len);
+// }

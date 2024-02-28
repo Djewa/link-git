@@ -54,16 +54,14 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	return (NULL);
 }
 
-int	main () 
-{
-	const char	str[] = "Hello World";
-	const char	ch = 'W';
-	char		*ret;
-
-	ret = ft_memchr(str, ch, ft_strlen(str));
-	//printf("String after |%c| is - |%s|\n", ch, ret);
-
-	ret = ft_memchr(str, ch, 6);
-	printf("String after |%c| is - |%s|\n", ch, ret);
-	return(0);
-}
+// int	main () 
+// {
+// 	const char	str[] = "Hello World";
+// 	const char	ch = 'W';
+// 	char		*ret;
+// 	ret = ft_memchr(str, ch, ft_strlen(str));
+// 	//printf("String after |%c| is - |%s|\n", ch, ret);
+// 	ret = ft_memchr(str, ch, 6);
+// 	printf("String after |%c| is - |%s|\n", ch, ret);
+// 	return(0);
+// }

@@ -28,8 +28,8 @@ void	*ft_bzero(void *s, size_t n)
 	}
 }
 
-int main()
-{
-	char	c[100] = "abcdefghisdklsdsfg";
-	ft_bzero(c, 10);
-}
+// int main()
+// {
+// 	char	c[100] = "abcdefghisdklsdsfg";
+// 	ft_bzero(c, 10);
+// }

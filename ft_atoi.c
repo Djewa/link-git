@@ -24,8 +24,7 @@ int	ft_atoi(const char *str)
 
 	result = 0;
 	neg = 1;
-
-	while (*str == 32 || (*str >= 9 && *str <= 13)) //can start with an arbitray amount of white space (isspace (3)- has 32 and 9-13
+	while (*str == 32 || (*str >= 9 && *str <= 13))
 	{
 		str++;
 	}
@@ -39,16 +38,16 @@ int	ft_atoi(const char *str)
 	}
 	while (*str >= 48 && *str <= 57)
 	{
-		result = result * 10 + *str - '0'; //str[i] - '0' converts the character at position i to a numeric digit.
+		result = result * 10 + *str - '0';
 		str++;
 	}
 	return (result * neg);
 }
 
-int main()
-{
-	char	*a = "  ---+--+123456ab567";
+// int main()
+// {
+// 	char	*a = "  ---+--+123456ab567";
 
-	printf("%d", ft_atoi(a));
-	return (0);
-}
+// 	printf("%d", ft_atoi(a));
+// 	return (0);
+// }

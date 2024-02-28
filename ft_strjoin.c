@@ -37,32 +37,29 @@ char	*ft_strjoin(char const *s1, char const *s2)
 
 	i = 0;
 	if (*s1 == '\0' || *s2 == '\0')
-	{
 		return (NULL);
-	}
 	len = ft_strlen(s1) + ft_strlen(s2);
-	str = (char *)malloc((len + 1) * sizeof(char)); // +1 for null
+	str = (char *)malloc((len + 1) * sizeof(char));
 	if (str == NULL)
-	{
 		return (NULL);
-	}
 	while (*s1 != '\0')
 	{
-		str[i++] = *s1++;
+		str[i] = *s1++;
+		i++;
 	}
 	while (*s2 != '\0')
 	{
-		str[i++] = *s2++;
+		str[i] = *s2++;
+		i++;
 	}
 	str[i] = '\0';
 	return (str);
 }
 
-int main()
-{
-	char	*prefix = "abc";
-	char	*suffix = "defgh";
-
-	printf("%s\n", ft_strjoin(prefix, suffix));
-	return (0);
-}
+// int main()
+// {
+// 	char	*prefix = "abc";
+// 	char	*suffix = "defgh";
+// 	printf("%s\n", ft_strjoin(prefix, suffix));
+// 	return (0);
+// }

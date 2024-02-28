@@ -40,15 +40,14 @@ size_t	ft_strlcpy(char *dest, const char *src, size_t destsize)
 	return (i);
 }
 
-int main()
-{
-	char	src[100] = "My Name is Miin";
-	char	dest[100] = "I am Miin";
-	int	result;
-
-	printf("src = %s\n", src);
-	printf("dest = %s\n", dest);
-	result = ft_strlcpy(dest, src, 16);
-	printf("New dest = %s\n", dest);
-	printf("Value = %d", result);
-}
+// int main()
+// {
+// 	char	src[100] = "My Name is Miin";
+// 	char	dest[100] = "I am Miin";
+// 	int	result;
+// 	printf("src = %s\n", src);
+// 	printf("dest = %s\n", dest);
+// 	result = ft_strlcpy(dest, src, 16);
+// 	printf("New dest = %s\n", dest);
+// 	printf("Value = %d", result);
+// }

@@ -28,34 +28,42 @@ size_t	ft_strlen(const char *str)
 	return (i);
 }
 
-char	*ft_strchr(const char *s, int c)
-{
-
-}
-
 char	*ft_strtrim(char const *s1, char const *set)
 {
+	int		start;
+	int		end;
 	int		i;
-	int		j;
 	size_t	len;
 	char	*str;
 
 	i = 0;
 	len = ft_strlen(s1) - 1;
 	if (*s1 == '\0')
-	{
 		return (NULL);
-	}
 	if (*set == '\0')
-	{
 		return (s1);
+	end = len;
+	while (s1[start++] == *set)
+	{
+		return (start);
 	}
-	str = (char *)malloc((len + 1) * sizeof(char));
+	while (s1[end++] == *set)
+	{
+		return (end);
+	}
+	str = (char *)malloc((end - start + 1) * sizeof(char));
+	while (start < end)
+	{
+		str[i] = s1[start + i];
+		i++;
+	}
+	str[i] = '\0';
+	return (str);
 }
 
-int main()
-{
-	char	a[] = "abcdabc";
-	char	b[] = "ab";
-	printf("%s\n",ft_strtrim, a, b);
-}
+// int main()
+// {
+// 	char	a[] = "abcdaba";
+// 	char	b[] = "ab";
+// 	printf("%s\n",ft_strtrim, a, b);
+// }

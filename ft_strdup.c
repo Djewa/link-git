@@ -51,13 +51,11 @@ char	*ft_strdup(const char *s)
 	return (str);
 }
 
-int main()
-{
-	const char	src[100] = "I am Miin";
-	char	*dest;
-	
-	dest = ft_strdup(src); 
-
-	printf("%s", dest);
-	return 0;
-}
+// int main()
+// {
+// 	const char	src[100] = "I am Miin";
+// 	char	*dest;
+// 	dest = ft_strdup(src); 
+// 	printf("%s", dest);
+// 	return 0;
+// }

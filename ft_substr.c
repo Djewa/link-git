@@ -14,43 +14,35 @@
 #include <string.h>
 #include <stdlib.h>
 
-#include <stdio.h>
+#include "libft.h"
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*substr;
 	int		len_s;
+	int		end;
 	int		i;
 
+	len_s = ft_strlen(s);
+	if (start >= len_s)
+		return (ft_strdup(""));
+	if (start < 0)
+		start = 0;
+	end = len_s - start;
+	if (end > len)
+		end = len;
+	substr = (char *)malloc((len + 1) * sizeof(char));
 	i = 0;
-	len_s = = ft_strlen(s);
-	if(start >= len_s)
+	while (i < end)
 	{
-		ft_strchr(s, start);
+		substr[i++] = s[start++];
 	}
-	else
-	{
-		ft_strrchr(s, len_s);
-	}
-	substr = (char *)malloc((len_s + 1) * sizeof(char));
-	while (i < len)
-	{
-		substr[i] = s[i];
-		i++;
-	}
-	substr[i] = '\0';
+	substr[start] = '\0';
 	return (substr);
 }
 
-
-
-while (len + start < len_s || len > len_s)
-	{
-
-	}
-
-
-		if (substr == '\0')
-	{
-		return (0);
-	}
+// int	main()
+// {
+// 	char const	*str = "Mozilla";
+// 	printf("%s", ft_substr(str, 2, 7));
+// }

@@ -32,10 +32,9 @@ void	*ft_memset(void *b, int c, size_t len)
 	return (b);
 }
 
-int	main()
-{
-	char	b[10];
-
-	ft_memset(b, 'A', 10);
-	printf("%s\n", b);
-}
+// int	main()
+// {
+// 	char	b[10];
+// 	ft_memset(b, 'A', 10);
+// 	printf("%s\n", b);
+// }

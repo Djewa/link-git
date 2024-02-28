@@ -23,16 +23,16 @@ int	ft_toupper(int c)
 	return (c);
 }
 
-int	main()
-{
-int alpha, alpha2, alpha3;
-    int a = 'E';
-    int b = 'a';
-    int c = '1';
-    alpha = ft_toupper(a);
-    alpha2 = ft_toupper(b);
-    alpha3 = ft_toupper(c);
-    printf("%c\n", alpha);
-    printf("%c\n", alpha2);
-    printf("%c\n", alpha3);
-}
+// int	main()
+// {
+// int alpha, alpha2, alpha3;
+//     int a = 'E';
+//     int b = 'a';
+//     int c = '1';
+//     alpha = ft_toupper(a);
+//     alpha2 = ft_toupper(b);
+//     alpha3 = ft_toupper(c);
+//     printf("%c\n", alpha);
+//     printf("%c\n", alpha2);
+//     printf("%c\n", alpha3);
+// }
