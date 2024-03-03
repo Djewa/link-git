@@ -17,9 +17,9 @@ char	*ft_strrchr(const char *s, int c)
 	int	i;
 
 	i = ft_strlen(s);
-	if (s[i] == '\0')
+	if ((char)c == '\0')
 	{
-		return (NULL);
+		return ((char *)(s + i));
 	}
 	while (i >= 0)
 	{
@@ -29,11 +29,7 @@ char	*ft_strrchr(const char *s, int c)
 		}
 		i--;
 	}
-	if ((char)c == '\0')
-	{
-		return ((char *)(s + i));
-	}
-	return (NULL);
+	return (0);
 }
 
 // int main()

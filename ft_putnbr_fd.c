@@ -6,7 +6,7 @@
 /*   By: djewapat < djewapat@student.42bangkok.com> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 12:47:48 by djewapat          #+#    #+#             */
-/*   Updated: 2024/02/28 18:38:03 by djewapat         ###   ########.fr       */
+/*   Updated: 2024/03/03 11:59:46 by djewapat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,16 @@
 
 void	ft_putnbr_fd(int n, int fd)
 {
-	if (n == -2147483648)
-		ft_putstr_fd("-2147483648", fd);
+	unsigned int	number;
+
 	if (n < 0)
 	{
 		write (fd, "-", 1);
-		n = n * -1;
+		number = -n;
 	}
-	if (n >= 10)
-	{
-		write (fd, &"0123456789"[n / 10], fd);
-		write (fd, &"0123456789"[n % 10 + '0'], fd);
-	}
+	else
+		number = n;
+	if (number >= 10)
+		ft_putnbr_fd(number / 10, fd);
+	ft_putchar_fd(number % 10 + '0', fd);
 }

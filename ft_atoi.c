@@ -29,20 +29,25 @@ int	ft_atoi(const char *str)
 	}
 	while (*str >= 48 && *str <= 57)
 	{
-		result = result * 10 + neg * (*str - '0');
-		if (neg < 0)
-			return (0);
-		if (neg > 0)
-			return (-1);
+		result = result * 10 + (*str - '0');
 		str++;
 	}
-	return (result);
+	return (result * neg);
 }
 
 // int main()
 // {
-// 	char	*a = "  ---+--+123456ab567";
-
-// 	printf("%d", ft_atoi(a));
+// 	printf("%d\n", ft_atoi("   123"));
+// 	printf("%d\n", ft_atoi("\t\v\n\r\f123"));
+// 	printf("%d\n", ft_atoi("0"));
+// 	printf("%d\n", ft_atoi("-1000043"));
+// 	printf("%d\n", ft_atoi("1209"));
+// 	printf("%d\n", ft_atoi("12/3"));
+// 	printf("%d\n", ft_atoi("12;3"));
+// 	printf("%d\n", ft_atoi("0 49"));
+// 	printf("%d\n", ft_atoi("2147483647"));
+// 	printf("%d\n", ft_atoi("-2147483648"));
+// 	printf("%d\n", ft_atoi("\t 10"));
+// 	printf("%d\n", ft_atoi("8 58"));
 // 	return (0);
 // }
